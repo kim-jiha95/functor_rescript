@@ -21,3 +21,11 @@ console.log(area(3) + area(4));;
 //  ==
 console.log(Math.PI * Math.pow(3, 2) + Math.PI * Math.pow(4, 2));
 
+
+// curry 와 partial application
+
+// 커리는 하나의 인자를 받는 함수를 반환하는 함수를 반환하는 함수를 반환하는 ... 함수임 하나의 인자를 받는 함수로 표현하며 그 함수는 다른 함수를 반환하고, 반환된 함수 역시 하나의 인자를 받는다는 규칙을 따른다.
+
+// partial application : 함수를 반환하는 함수이지만 함수가 받는 인자는 하나일 필요는 없다. 여러 개를 받을 수도 있다
+
+const add = x => (y, z) => x + y + z;
