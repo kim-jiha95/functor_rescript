@@ -11,12 +11,21 @@
 
 // 함수형 프로그래밍에서 중요한 2가지 개념 - 부수효과/ 참조투명성
 
+//  expression 개선됐을때 하나의 값이 될 수 있는 것
+//statement 실행가능한 코드조각
+// if문 for문은 expression에 해당하지 않는 statement임  if문은 특정 값으로 치환이 안됨 삼항연산자는 expression임
+
+//for loop는 왜 state일까?
+//함수를 호풀하는 것도 expression임
+//literal -> 데이터 그 자체 이미 계산이 끝난 값
+
 // 부수 효과는 함수 내의 실행으로 인해 함수 외부가 영향을 받는 것을 의미함.
 // 즉 함수형 코드가 되기 위해서는 외부 세계(데이터 베이스, 파일 시스템, 네트워크로 데이터 이동이 '함수 실행' 중에 발생하지 않아야 함
 
 const area = radius => Math.PI * Math.pow(radius, 2);
 
 // 참조 투명하다 -- 함수 입력 표현식을 그 결과로 치환해도 함수 작동에 문제가 없기 때문에
+// 로컬 리즈닝 -> 지역적 추론  ---> 기대했을 때  효과 달라짐
 console.log(area(3) + area(4));;
 //  ==
 console.log(Math.PI * Math.pow(3, 2) + Math.PI * Math.pow(4, 2));
