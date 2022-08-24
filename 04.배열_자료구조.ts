@@ -1,6 +1,6 @@
 //배열
 
-let arr: number[] = [1, 3, 5];
+let arr3: number[] = [1, 3, 5];
 let arr2: string[] = ["a", "b", "c", "d"]
 
 interface IBook {
