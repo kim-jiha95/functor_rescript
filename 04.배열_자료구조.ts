@@ -1,6 +1,6 @@
 //배열
 
-let arr3: number[] = [1, 3, 5];
+let arr: number[] = [1, 3, 5];
 let arr2: string[] = ["a", "b", "c", "d"]
 
 interface IBook {
@@ -48,4 +48,4 @@ console.log(tuple) // ["what", 3, 5]
 
 // 빈틈 없는 데이터의 적재
 // 처음 끝 중간에 엘리먼트를 추가.삭제
-// 리스트에 데이터 체크
+//
