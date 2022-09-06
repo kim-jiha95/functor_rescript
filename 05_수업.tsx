@@ -24,11 +24,38 @@
 //재귀함수 재귀적인 자료구조 관계성 .. 재귀 기본 구조
 //수학적 귀납법과 재귀
 // 1~n 까지의 합 for loop/ 재귀
-function sum(n) {
-    for (i < n)
+// function sum(n) {
+//     for (i < n)
+// }
+
+// function sum_() {
+//     if (n == 0)
+// }
+///
+
+function f(n) {
+    if (n <= 1) {
+        return 1
+    }
+    return n + f(n - 1)
+}
+console.log(f(100));
+
+//문자열 뒤집기
+function strReverse(str) {
+    if (str.length == 1) {
+        return str
+    }
+    return str[str.length - 1] + strReverse(str.slice(0, str.length - 1)) //순서 더하는 순서
+}
+console.log(strReverse('kimjiha'));
+
+// 유클리드 호재법 - 인자로 주어진 두 수의 최대공약수를 찾는 함수를 재귀함수로 만들어 보라
+function gcd(a, b) {
+    const remainder = a % b;
+    if (remainder === 0) return b;
+    return gcd(b, remainder);
 }
 
-function sum_() {
-    if (n == 0)
-}
-///
+console.log(gcd(1, 5));
+
