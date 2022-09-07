@@ -18,6 +18,8 @@ console.log(strReverse('kimjiha'));
 
 // 유클리드 호재법(최대공약수) -  인자로 주어진 두 수의 최대공약수를 찾는 함수를 재귀함수로 만들어 보라
 function gcd(a: number, b: number) {
+    // 인자에서 **베이스케이스를 만듬
+    //계산에 영향을 안미치는 것이 베이스케이스 + 0 ; x 는 1
     const remainder = a % b;
     if (remainder === 0) return b;
     // 어떤 수를 자신보다 더 큰수로 나누게 되면 몫이 0이 되고 그 자신이 나머지가 됨
