@@ -59,7 +59,6 @@ function mult(arr) {
   return times(n, mult(arr));
 }
 // [a, b, c] -> a * b * c
-김춘구오후 7:16
 map 함수를 reduce로 구현해보아라
 function reduce(arr, init, f) {
   if (arr === []) return init;
@@ -99,5 +98,5 @@ map(length)(["tomato", "banana", "apple"]);
 //length :: string -> number
 //arrayLength :: array<string> -> array<number>
 functor -> promise option ....~
-    apply(length) ??? // string -> number, length 함수 그 자체를 반환
-    map(length) ??? // array<string> -> array<number>, map은 어떤 함수를 array에 적용 할 수 있는 함수로 탈바꿈 시켜줌.
+  apply(length) ??? // string -> number, length 함수 그 자체를 반환
+  map(length) ??? // array<string> -> array<number>, map은 어떤 함수를 array에 적용 할 수 있는 함수로 탈바꿈 시켜줌.
