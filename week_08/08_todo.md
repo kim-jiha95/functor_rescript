@@ -86,3 +86,36 @@ function solution(arr, divisor) {
     isSquareEven(5)
 
   `
+
+
+- Todo2 : map함수를 reduce로 바꾸어보아라
+
+ # map
+
+`
+    
+    let numbers = [1, 2, 3, 4, 5]
+
+    var result_ = numbers.map(Math.sqrt)
+    
+    console.log(result_)
+`
+
+
+`
+
+
+# reduce
+`
+    
+    const numbers_2 = [1, 2, 3, 4, 5]
+    const result_2 = numbers_2.reduce((acc, cur) => {
+    acc.push(Math.sqrt(cur));
+    return acc
+    }, [])
+    console.log(result_2);
+
+`
+
+**reduce 콜백 사용**
+
