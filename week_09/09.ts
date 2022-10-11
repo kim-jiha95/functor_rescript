@@ -59,10 +59,11 @@ const b1 = cons_(1, nil())
 // const sum = <A extends unknown>(head: A, tail: List<A>):List<A> => ({
 //     // _tag: "Cons", head, tail
 //     if(list._tag ==="Nil") return 0;
-//     1 = head, + tail
+//     1 = head  //+ tail
 // })
 
 //sum , mult, reduce 만들 수 있음
+
 
 // 다른 자료구조 tree : head에서 left, right, (left, right 비어 있을 수 있냐?)
 //자연수에서 출발해서 재귀 … 알고리즘 이해하기 도움 됨
