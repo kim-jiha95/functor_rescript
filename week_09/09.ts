@@ -49,21 +49,56 @@ const l1: number[] = [1, 2, 4] //...
 type Nil_ = { _tag: "Nil" }
 const nil = (): Nil => ({ _tag: "Nil" })
 const cons_ = <A extends unknown>(head: A, tail: List<A>): List<A> => ({
-    _tag: "Cons", head, tail
+    _tag: "Cons", head, tail,
 })
 
 const empty_list1 = nil();
 const b1 = cons_(1, nil())
 
+type Sum<A> = { _tag: "Sum", head: A, tail: List_<A> };
+type List_<A> = Nil | Sum<A>
+
 //list의 함수
-// const sum = <A extends unknown>(head: A, tail: List<A>):List<A> => ({
-//     // _tag: "Cons", head, tail
-//     if(list._tag ==="Nil") return 0;
-//     1 = head  //+ tail
-// })
+const sum = <A extends unknown>(head: A, tail: Sum<A>): List_<A> => ({
+    /*
+    if(list._tag ==="Nil") return 0; //첫 합 0  
+    1 = head  //+ tail   0 + ( 0 + 1 ) + ( 0 + 1 + 1) + (0 + 1 + 1 + 1) ..../*
+    */
+    _tag: "Sum", head, tail,
+    //    if(tail._tag === "Nil") return 0;
+    //     return 1 + head 
+})
 
 //sum , mult, reduce 만들 수 있음
 
+type List__<A> = Nil | Mul<A>
+type Mul<A> = { _tag: "Mul", head: A, tail: List__<A> };
+
+const multiply = <A extends unknown>(head: A, tail: List__<A>): List__<A> => ({
+    _tag: "Mul", head, tail
+    // if(tail._tag ===" Nil") return 1;
+    // const n = head.shift()
+    // return head * n
+})
+
+// 일반적으로 내장된 .reduce 를 reduce 함수로 구현한 것
+function reducerFunction(result, current) {
+    return result + current;
+}
+
+//List___A를 어떻게 바꿔줘야 할까...?
+type List___<A> = Nil | Reduce<A>
+type Reduce<A> = { _tag: "Reduce", head: A, tail: List___<A> };
+
+
+const reduce = <A extends unknown>(head: A, tail: List___<A>): List___<A> => ({
+    _tag: "Reduce", head, tail,
+    /*
+    if(tail._tag === "Nil") return 0;
+    // 순회하면서 계속 리스트에 넣어줘야 함
+    return head + tail
+    */
+})
 
 // 다른 자료구조 tree : head에서 left, right, (left, right 비어 있을 수 있냐?)
 //자연수에서 출발해서 재귀 … 알고리즘 이해하기 도움 됨
