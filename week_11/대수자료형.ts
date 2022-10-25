@@ -43,7 +43,90 @@ enum class RGB {
 
 //합타입 - optional
 
+type TrumpRank =
+    1 | 2 | 3
+    | 4 | 5 | 6
+    | 7 | 8 | 9 | 10
+    | "Jack" | "Queen" | "King"
+
+type TrumpSuit =
+    "♠" | "♥" | "♦" | "♣"
+
+type TrumpJoker = "BWJoker" | "ColorJoker"
+
+
+type TrumpCard = {
+    suit: TrumpSuit;
+    rank: TrumpRank;
+
+} | TrumpJoker
+
 type cardCase = TrumpCard | TropyCard
+
+// trumpType을 먼저 판별
+function isSpade(trumpCard: TrumpCard) {
+    switch (trumpCard.trumpType) {
+        case "normal": return trumpCard.suit === "♣"
+        case 'joker': return false
+    }
+}
+
+// 1. 인자로 들어온 trumpCard 값을 조커의 하위 타입 리터럴들과 비교한 후 예외 절에서 suit 속성을 참조하여 판별.
+function SpadeIs(trumpCard: TrumpCard) {
+    if (trumpCard === "BWJoker" || trumpCard === 'ColorJoker')
+        return false
+    return trumpCard.suit === "♠"
+}
+
+// 2. 인자로 들어온 trumpCard값의 suit 속성이 존재하는 지 판별한 후, suit 속성이 존재하는 경우에만 suit속성을 참조하여 판별한다.
+function spade_(trumpCard: TrumpCard) {
+    if ("suit" in trumpCard)
+        return trumpCard.suit === '♠'
+    return false
+}
+
+//ex 온라인 쇼핑몰
+type ShoppingItem = string
+type Store = {
+    name: string,
+    location: string,
+    items: ShoppingItem[]
+}
+
+type Seller = {
+    id: string,
+    password: string,
+    stores: Store[]
+}
+
+type UserType = Customer | Admin | Seller
+
+type Customer = {
+    id: string,
+    password: string,
+    cart: ShoppingItem[]
+}
+
+type Admin = {
+    id: string,
+    password: string,
+    storeList: Store[]
+    userList: Customer[]
+    sellerList: Seller[]
+}
+
+// 각각의 사용자의 유형별로 처리 해야하면 각각의 하위 타입들을 고유하게 구분할 수 있는 속성군을 추려내기
+function applyToUserType(userType: UserType) {
+    if ("cart" in userType) {
+        // Customer의 처리문
+    }
+    else if ("sellerList" in userType) {
+        // ...Admin의 처리문
+    }
+    else if ("profit" in userType) {
+        // ... Seller의 처리문
+    }
+}
 
 //개수 N(cardset) = N(TrumpCard) + N(TropyCard)
 
@@ -57,3 +140,5 @@ type cardCase = TrumpCard | TropyCard
 // 다음시간 todo : ts / rescript 합타입 곱타입 사용 방법 비교
 
 //합타입 곱타입 사용 방법 - 실제로 쓰이는,, - 에러 타입 표현할 떄, null을 허용하지 않는 언어에서 type 안전하게 ... / generic하고 같이 쓰는 방법
+
+function isSpade(trumpCard: TrumpCard)
