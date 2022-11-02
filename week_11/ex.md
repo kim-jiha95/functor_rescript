@@ -83,3 +83,59 @@
 합타임(tagged union 잘 구현하면 패턴매칭 이루어짐)
 패턴매칭이 없으면 대수자료 쓰기 힘듬 
 
+adt
+
+지수적 타입 - 이걸 사용하면 뭘 할 수 있을까
+
+합 : a + b
+곱 : a x b
+지수 : b의 a승
+b의 a승 - 중복조합
+
+커리된 함수와 커리 안 된 함수가 동일함
+
+comp({P1, p2, p3, p4})
+object로 prop을 감싸는 이유?!
+
+대수적 시각으로 보면 복잡한 함수 구조를 간단하게 바꿀 수 있음
+
+함수형 프로그래밍에서 데이터나 타입을 다루는 시선을 캡쳐본처럼 (throw문)
+
+인자가 빈 함수에는 유닛이 숨어있음
+f() {
+  return true
+}
+
+generator reactivity
+기능적인 초첨, 개념적인 초점
+
+https://www.youtube.com/watch?v=gui_SE8rJUM
+
+https://www.youtube.com/watch?v=sTSQlYX5DU0
+
+adt 돞아보라
+
+map함수?!
+
+f : a -> b
+x : a 
+
+이 두개로 f(x)
+
+
+f
+수업 장표
+
+functor ? 
+
+https://jamboard.google.com/d/1gIDPTKAwTYS67bMsEwHwYX2SBTWmTzLCknVQLQRB7Sw/edit?usp=sharing
+
+todo : map promise 의 구조적 동일함을 한번 보기
+
+rx에선 어떻게 가능한가?
+
+monad
+
+1. 배열에서 map
+2. promise의 then을 map 과 비교
+3. rx map 을 promise와 비교해보기
