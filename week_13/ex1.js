@@ -25,6 +25,7 @@ rs 에서 인자가 0개인 함수 f(())
 
 
 map 함수는 isodd를 3번(배열 크기만큼) 실행시켜줌
+
 then은 promise 종료, resolve, 될 때 실행됨
 
 observable의 data type의미는 비동기로 언제 발생할지 모르는 여러개의 값

@@ -12,7 +12,9 @@
 
 /*
 code
+
 const arr = [1,2,3,4,1230,4567,234,6578];
+
 function length(arr) {
   if (arr === []) return 0;
   const n = arr.shift();
@@ -30,6 +32,7 @@ function sum(arr) {
   const n = arr.shift();
   return plus(n, sum(arr));
 }
+
 // [a,b,c] -> a + b + c
 // sum([a,b,c]) -> a + sum([b,c]) -> a + b + sum([c]) -
 const arr = [1,2,3,4,1230,4567,234,6578];
