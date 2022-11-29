@@ -78,3 +78,5 @@ Promise<string>.then 값의 실행 순서 정확히 알 수 없음. then(map, fl
 */
 
 // type 중심적 사고 https://www.youtube.com/watch?v=M3pMCZqPvzI
+// 수업 링크 추가
+// Map reduce 참고 자료 : https://ui.toast.com/weekly-pick/ko_20150817
