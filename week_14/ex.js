@@ -22,8 +22,6 @@ arr1.flatMap(x => [[x * 2]]);
 
 // 합성되는 부분 무얼까??? 한번 보아라!
 
-// Pipe : https://velog.io/@teo/%ED%95%A8%EC%88%98%ED%98%95-%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%B0%8D-%EC%88%9C%EC%88%98%ED%95%A8%EC%88%98%EC%9D%98-%ED%95%A9%EC%84%B1%ED%8E%B8
-
 // 함수 합성 : "https://evan-moon.github.io/2020/01/27/safety-function-composition/"
 
 // pipe 함수 : (a -> b) -> (b -> c) -> (a -> c)
